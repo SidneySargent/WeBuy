@@ -9,18 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AchatGroupeDetail_activity"></activity>
+        <activity android:name=".AchatGroupeDetail_activity"/>
         <activity android:name=".AchatGroupe_activity" />
-        <activity
-            android:name=".ui.login.Login_activity"
-            android:label="@string/title_activity_login_activity" />
         <activity android:name=".Login_activity" />
-        <activity android:name=".Magasins_activity" />
-        <activity android:name=".achat_groupe_detail_activity" />
-        <activity android:name=".achatGroupe_activity" />
-        <activity android:name=".magasins_activity" />
-        <activity android:name=".accueil_activity" />
-        <activity android:name=".Accueil_activity">
+        <activity android:name=".Magasins_activity"
+            android:parentActivityName=".Accueil_activity"/>
+        <activity android:name=".Accueil_activity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

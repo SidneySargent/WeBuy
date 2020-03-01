@@ -14,7 +14,6 @@ import java.util.ArrayList;
 
 public class Magasins_activity extends AppCompatActivity {
 
-    private ArrayList<String> planetes;
     ListView listview;
     MagasinAdapter adapter;
 
@@ -24,25 +23,29 @@ public class Magasins_activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_magasins);
-        listview = (ListView) findViewById(R.id.listView);
-        adapter = new MagasinAdapter((LayoutInflater) Magasins_activity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE), Magasins_activity.this);
-        listview.setAdapter(adapter);
-        envoyer = (Button) findViewById(R.id.button2);
-        envoyer.setOnClickListener(checkedListener);
-    }
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //listview = (ListView) findViewById(R.id.listView);
+        //adapter = new MagasinAdapter((LayoutInflater) Magasins_activity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE), Magasins_activity.this);
+        //listview.setAdapter(adapter);
+        //envoyer = (Button) findViewById(R.id.soumbtn);
+        //envoyer.setOnClickListener(checkedListener);
+    }
+/*
     private View.OnClickListener checkedListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            if(adapter.Verification()) {
+            //if(adapter.Verification()) {
                 popUp("Ok");
-            }
-            else {
+            //}
+            //else {
                 popUp("Pas ok");
-            }
+            //}
         }
     };
     public void popUp(String message) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
+ */
 }
