@@ -9,4 +9,9 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="sidneysargent">SidneySargent</string>
+    <string name="adam_diakite_420">Adam DIAKITE-420</string>
+    <string name="_3_55">3€55</string>
+    <string name="Connection">connection</string>
+    <string name="logo">logo</string>
 </resources>
