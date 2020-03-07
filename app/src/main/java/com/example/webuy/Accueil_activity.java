@@ -12,6 +12,10 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+
+import androidx.appcompat.widget.Toolbar;
+
+
 public class Accueil_activity extends AppCompatActivity {
 
     Button magasinbtn;
@@ -25,7 +29,10 @@ public class Accueil_activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accueil);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
+        //getSupportActionBar().setLogo(R.drawable.logo2);
         //getActionBar().setDisplayHomeAsUpEnabled(true);
         //getActionBar().setLogo(R.drawable.logo2);
         //getSupportActionBar().setLogo(R.drawable.logo2);
@@ -104,11 +111,7 @@ public class Accueil_activity extends AppCompatActivity {
 
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            Intent i = new Intent(Accueil_activity.this, Login_activity.class);
-            startActivity(i);
-            return true;
-        } else if (id == R.id.logo) {
+        if (id == R.id.logo) {
             return true;
         }
 

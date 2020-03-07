@@ -3,11 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.sc.webuy">
-    <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/Connection"
-        app:showAsAction="never" />
+
     <item
         android:id="@+id/logo"
         android:icon="@drawable/logo2"

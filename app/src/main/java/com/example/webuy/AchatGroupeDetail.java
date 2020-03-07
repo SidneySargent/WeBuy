@@ -33,11 +33,7 @@ public class AchatGroupeDetail extends AppCompatActivity {
 
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            Intent i = new Intent(AchatGroupeDetail.this, Login_activity.class);
-            startActivity(i);
-            return true;
-        } else if (id == R.id.logo) {
+        if (id == R.id.logo) {
             Intent i = new Intent(AchatGroupeDetail.this, Accueil_activity.class);
             startActivity(i);
             return true;

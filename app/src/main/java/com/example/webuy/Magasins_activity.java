@@ -1,48 +1,123 @@
 package com.example.webuy;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Layout;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class Magasins_activity extends AppCompatActivity {
 
     ListView listview;
-    MagasinAdapter adapter;
 
-    Button envoyer = null;
+    String mag[] = {"Carrefour", "Lidl", "Leclerc", "Auchan"};
 
-    ConstraintLayout caConstraintLayout;
+    String ad[] = {"12 allée des pruniers 37000 TOURS", "16 rue des érables 37000 Tours", "16 rue" +
+            " des érables 37000 Tours", "16 rue des érables 37000 Tours"};
+
+    String nbPromo[] = {"12 promotions", "1 promotion", "5 promotions", "4 promotions"};
+
+    int images[] = {R.drawable.carrefour, R.drawable.lidl, R.drawable.leclerc, R.drawable.auchan};
+
+    //ConstraintLayout caConstraintLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_magasins);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-        caConstraintLayout = (ConstraintLayout) findViewById(R.id.clCarrefour);
+        listview = findViewById(R.id.listview);
 
-        caConstraintLayout.setOnClickListener(new View.OnClickListener() {
+        MyAdapter adapter = new MyAdapter(this, mag, ad, nbPromo, images);
+        listview.setAdapter(adapter);
+
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent i = new Intent(Magasins_activity.this, AchatGroupeDetail.class);
-                startActivity(i);
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) {
+                    Intent i = new Intent(Magasins_activity.this, AchatGroupeDetail.class);
+                    startActivity(i);
+                }
+                if (position == 1) {
+
+                }
             }
         });
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //caConstraintLayout = (ConstraintLayout) findViewById(R.id.clCarrefour);
 
-        //listview = (ListView) findViewById(R.id.listView);
-        //adapter = new MagasinAdapter((LayoutInflater) Magasins_activity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE), Magasins_activity.this);
-        //listview.setAdapter(adapter);
-        //envoyer = (Button) findViewById(R.id.soumbtn);
-        //envoyer.setOnClickListener(checkedListener);
+        //caConstraintLayout.setOnClickListener(new View.OnClickListener() {
+        //    @Override
+        //    public void onClick(View v) {
+        //        Intent i = new Intent(Magasins_activity.this, AchatGroupeDetail.class);
+        //        startActivity(i);
+        //    }
+        //});
+
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
+
+    class MyAdapter extends ArrayAdapter<String> {
+
+        Context context;
+        String mag[];
+        String ad[];
+        String nbPromo[];
+        int image[];
+
+        MyAdapter (Context c, String magasin[], String adresse[], String nbPromotions[],int images[]){
+            super(c, R.layout.rowmag, R.id.magasin, magasin);
+            this.context = c;
+            this.mag = magasin;
+            this.ad = adresse;
+            this.nbPromo = nbPromotions;
+            this.image = images;
+
+        }
+
+        @NonNull
+        @Override
+        public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+            LayoutInflater layoutInflater = (LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            View row = layoutInflater.inflate(R.layout.rowmag, parent, false);
+            ImageView images = row.findViewById(R.id.image);
+            TextView magasins = row.findViewById(R.id.magasin);
+            TextView adresses = row.findViewById(R.id.adresse);
+            TextView nbpromotions = row.findViewById(R.id.nbpromotions);
+
+
+            images.setImageResource(image[position]);
+            magasins.setText(mag[position]);
+            adresses.setText(ad[position]);
+            nbpromotions.setText(nbPromo[position]);
+
+
+            return row;
+        }
+    }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -60,11 +135,7 @@ public class Magasins_activity extends AppCompatActivity {
 
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            Intent i = new Intent(Magasins_activity.this, Login_activity.class);
-            startActivity(i);
-            return true;
-        } else if (id == R.id.logo) {
+        if (id == R.id.logo) {
             Intent i = new Intent(Magasins_activity.this, Accueil_activity.class);
             startActivity(i);
             return true;
