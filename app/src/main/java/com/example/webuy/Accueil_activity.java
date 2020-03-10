@@ -8,9 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ListView;
-
-import java.util.ArrayList;
+import android.widget.ImageView;
 
 
 import androidx.appcompat.widget.Toolbar;
@@ -20,10 +18,10 @@ public class Accueil_activity extends AppCompatActivity {
 
     Button magasinbtn;
     Button soumbtn;
-    Button forumbtn;
     Button planbtn;
-    Button promobtn;
     Button optionbtn;
+
+    ImageView logo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,18 +30,15 @@ public class Accueil_activity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //getSupportActionBar().setLogo(R.drawable.logo2);
-        //getActionBar().setDisplayHomeAsUpEnabled(true);
-        //getActionBar().setLogo(R.drawable.logo2);
-        //getSupportActionBar().setLogo(R.drawable.logo2);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
 
         magasinbtn = (Button)findViewById(R.id.magasinbtn);
         soumbtn = (Button)findViewById(R.id.soumbtn);
-        forumbtn = (Button)findViewById(R.id.forumbtn);
         planbtn = (Button)findViewById(R.id.planbtn);
-        promobtn = (Button)findViewById(R.id.promobtn);
         optionbtn = (Button)findViewById(R.id.optionbtn);
 
+        logo = (ImageView)findViewById(R.id.logo);
 
         magasinbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,23 +57,7 @@ public class Accueil_activity extends AppCompatActivity {
             }
         });
 
-        forumbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(Accueil_activity.this, Magasins_activity.class);
-                startActivity(i);
-            }
-        });
-
         planbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(Accueil_activity.this, Magasins_activity.class);
-                startActivity(i);
-            }
-        });
-
-        promobtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Accueil_activity.this, Magasins_activity.class);
@@ -93,6 +72,8 @@ public class Accueil_activity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+
     }
 
     @Override
@@ -111,8 +92,13 @@ public class Accueil_activity extends AppCompatActivity {
 
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.logo) {
-            return true;
+        if (id == R.id.profil) {
+            Intent i = new Intent(Accueil_activity.this, Profil_activity.class);
+            startActivity(i);
+        }
+        else if(id == R.id.deconnexion) {
+            Intent i = new Intent(Accueil_activity.this, Login_activity.class);
+            startActivity(i);
         }
 
         return super.onOptionsItemSelected(item);

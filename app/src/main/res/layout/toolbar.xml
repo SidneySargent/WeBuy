@@ -18,8 +18,15 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:logo="@drawable/logo2"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/logo2" />
+
+        </androidx.appcompat.widget.Toolbar>
 
 
 

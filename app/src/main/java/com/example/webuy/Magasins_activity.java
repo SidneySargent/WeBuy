@@ -29,6 +29,8 @@ public class Magasins_activity extends AppCompatActivity {
 
     ListView listview;
 
+    ImageView logo;
+
     String mag[] = {"Carrefour", "Lidl", "Leclerc", "Auchan"};
 
     String ad[] = {"12 allée des pruniers 37000 TOURS", "16 rue des érables 37000 Tours", "16 rue" +
@@ -47,6 +49,9 @@ public class Magasins_activity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         listview = findViewById(R.id.listview);
 
         MyAdapter adapter = new MyAdapter(this, mag, ad, nbPromo, images);
@@ -56,12 +61,29 @@ public class Magasins_activity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 0) {
-                    Intent i = new Intent(Magasins_activity.this, AchatGroupeDetail.class);
+                    Intent i = new Intent(Magasins_activity.this, AchatGroupe_activity.class);
                     startActivity(i);
                 }
                 if (position == 1) {
 
                 }
+                if (position == 2) {
+
+                }
+                if (position == 3) {
+
+                }
+
+            }
+        });
+
+        logo = (ImageView)findViewById(R.id.logo);
+
+        logo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Magasins_activity.this, Accueil_activity.class);
+                startActivity(i);
             }
         });
 
@@ -133,12 +155,13 @@ public class Magasins_activity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.logo) {
-            Intent i = new Intent(Magasins_activity.this, Accueil_activity.class);
+        if (id == R.id.profil) {
+            Intent i = new Intent(Magasins_activity.this, Profil_activity.class);
             startActivity(i);
-            return true;
+        }
+        else if(id == R.id.deconnexion) {
+            Intent i = new Intent(Magasins_activity.this, Login_activity.class);
+            startActivity(i);
         }
 
         return super.onOptionsItemSelected(item);

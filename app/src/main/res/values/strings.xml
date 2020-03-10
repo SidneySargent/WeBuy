@@ -15,4 +15,7 @@
     <string name="Connection">connection</string>
     <string name="logo">logo</string>
     <string name="title_activity_lancement">Lancement</string>
+    <string name="action_settings">action_setting</string>
+    <string name="Profil">profil</string>
+    <string name="Deconnexion">deconnexion</string>
 </resources>

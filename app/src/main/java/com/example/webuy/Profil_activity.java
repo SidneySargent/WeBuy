@@ -10,29 +10,29 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
-public class AchatGroupeDetail extends AppCompatActivity {
+public class Profil_activity extends AppCompatActivity {
 
     ImageView logo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_achat_groupe_detail);
+        setContentView(R.layout.activity_profil);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         logo = (ImageView)findViewById(R.id.logo);
 
         logo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(AchatGroupeDetail.this, Accueil_activity.class);
+                Intent i = new Intent(Profil_activity.this, Accueil_activity.class);
                 startActivity(i);
             }
         });
+
     }
 
     @Override
@@ -49,14 +49,16 @@ public class AchatGroupeDetail extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+
+        //noinspection SimplifiableIfStatement
         if (id == R.id.profil) {
-            Intent i = new Intent(AchatGroupeDetail.this, Profil_activity.class);
-            startActivity(i);
+            return true;
         }
         else if(id == R.id.deconnexion) {
-            Intent i = new Intent(AchatGroupeDetail.this, Login_activity.class);
+            Intent i = new Intent(Profil_activity.this, Login_activity.class);
             startActivity(i);
         }
+
         return super.onOptionsItemSelected(item);
     }
 }

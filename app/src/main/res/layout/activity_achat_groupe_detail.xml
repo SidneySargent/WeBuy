@@ -2,33 +2,19 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AchatGroupeDetail">
 
-    <RelativeLayout
-        android:layout_width="204dp"
-        android:layout_height="206dp"
-        android:layout_marginEnd="3dp"
-        android:layout_marginRight="3dp"
-        android:layout_marginBottom="2dp"
-        app:layout_constraintBottom_toTopOf="@+id/Others"
-        app:layout_constraintEnd_toStartOf="@+id/infosArticle"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/ImageProduit"
-            android:layout_width="182dp"
-            android:layout_height="172dp"
-            android:layout_alignWithParentIfMissing="true"
-            android:layout_centerInParent="true"
-            app:srcCompat="@drawable/tresor" />
-    </RelativeLayout>
+    <include
+        android:id="@+id/include"
+        layout="@layout/toolbar" />
 
     <RelativeLayout
         android:id="@+id/infosArticle"
         android:layout_width="202dp"
         android:layout_height="207dp"
+        android:layout_marginTop="56dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -82,9 +68,27 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:layout_width="204dp"
+        android:layout_height="206dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/Others"
+        app:layout_constraintEnd_toStartOf="@+id/infosArticle">
+
+
+        <ImageView
+            android:id="@+id/ImageProduit"
+            android:layout_width="182dp"
+            android:layout_height="172dp"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_centerInParent="true"
+            app:srcCompat="@drawable/barilla" />
+    </RelativeLayout>
+
+    <RelativeLayout
         android:id="@+id/Others"
-        android:layout_width="411dp"
-        android:layout_height="126dp"
+        android:layout_width="406dp"
+        android:layout_height="88dp"
         android:layout_marginTop="1dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -95,9 +99,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="false"
-            android:layout_alignParentRight="false"
-            android:layout_centerInParent="true"
-            android:text="Voir aussi" />
+            android:text="Espace commentaire" />
 
     </RelativeLayout>
 
@@ -108,12 +110,6 @@
         android:layout_marginTop="1dp"
         app:layout_constraintEnd_toStartOf="@+id/relativeLayout5"
         app:layout_constraintTop_toBottomOf="@+id/Others">
-
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/barilla" />
 
         <ImageView
             android:id="@+id/imageView6"

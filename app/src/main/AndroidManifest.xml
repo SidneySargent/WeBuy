@@ -9,23 +9,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".Lancement"
-            android:label="@string/title_activity_lancement"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Profil_activity"></activity>
         <activity android:name=".AchatGroupeDetail" />
         <activity android:name=".AchatGroupe_activity" />
         <activity android:name=".Login_activity" />
         <activity
             android:name=".Magasins_activity"
             android:parentActivityName=".Accueil_activity" />
-        <activity android:name=".Accueil_activity">
+        <activity
+            android:name=".SplashScreen"
+            android:theme="@style/SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Accueil_activity"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>
