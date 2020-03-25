@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Options_activity"></activity>
+        <activity android:name=".Promo"></activity>
+        <activity
+            android:name=".Drawer"
+            android:label="@string/title_activity_drawer"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Options_activity" />
         <activity android:name=".BonPlans_activity" />
         <activity android:name=".Profil_activity" />
         <activity android:name=".AchatGroupeDetail" />
