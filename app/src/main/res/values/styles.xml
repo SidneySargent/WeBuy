@@ -20,4 +20,9 @@
     <style name="SplashScreen" parent="Theme.Design.NoActionBar">
         <item name="android:windowBackground">@drawable/bachground_splashscreen</item>
     </style>
+
+    <style name="Login_activity" parent="Theme.Design.NoActionBar">
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
 </resources>

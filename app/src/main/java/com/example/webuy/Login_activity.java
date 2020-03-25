@@ -22,6 +22,7 @@ public class Login_activity extends Activity {
             public void onClick(View v) {
                 Intent i = new Intent(Login_activity.this, Accueil_activity.class);
                 startActivity(i);
+                overridePendingTransition(R.anim.slide_out_bot, R.anim.slide_in_top);
             }
         });
     }
