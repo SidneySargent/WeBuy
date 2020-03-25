@@ -166,22 +166,4 @@ public class Magasins_activity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-
-/*
-    private View.OnClickListener checkedListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            //if(adapter.Verification()) {
-                popUp("Ok");
-            //}
-            //else {
-                popUp("Pas ok");
-            //}
-        }
-    };
-    public void popUp(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
-    }
- */
 }

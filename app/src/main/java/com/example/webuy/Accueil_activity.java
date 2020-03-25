@@ -60,7 +60,7 @@ public class Accueil_activity extends AppCompatActivity {
         planbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Accueil_activity.this, Magasins_activity.class);
+                Intent i = new Intent(Accueil_activity.this, BonPlans_activity.class);
                 startActivity(i);
             }
         });
@@ -68,7 +68,7 @@ public class Accueil_activity extends AppCompatActivity {
         optionbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Accueil_activity.this, Magasins_activity.class);
+                Intent i = new Intent(Accueil_activity.this, Options_activity.class);
                 startActivity(i);
             }
         });
