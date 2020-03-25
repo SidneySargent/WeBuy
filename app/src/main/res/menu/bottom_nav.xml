@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homenu"
+        android:icon="@drawable/ic_android_black_24dp"
+        android:title="Menu principal" />
+
+    <item
+        android:id="@+id/soumettre"
+        android:icon="@drawable/ic_call_made_black_24dp"
+        android:title="Soumettre une promotion" />
+
+    <item
+        android:id="@+id/voirPromos"
+        android:icon="@drawable/ic_announcement_black_24dp"
+        android:title="Promotions" />
+
+    <item
+        android:id="@+id/Optn"
+        android:icon="@drawable/ic_build_black_24dp"
+        android:title="Optons" />
+</menu>
